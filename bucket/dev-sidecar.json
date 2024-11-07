@@ -1,0 +1,34 @@
+{
+    "version": "1.8.9",
+    "description": "开发者边车，github 打不开，github 加速，git clone 加速，git release 下载加速，stackoverflow 加速。",
+    "homepage": "https://github.com/docmirror/dev-sidecar",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/docmirror/dev-sidecar/releases/download/v1.8.9/DevSidecar-1.8.9-node16.exe#/dl.7z",
+            "hash": "938b233931aec3a1e0fc64566b5d35b07c9559864a9707c40e5ada8face7baff",
+            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal",
+            "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninst*\" -Recurse"
+        }
+    },
+    "shortcuts": [
+        [
+            "dev-sidecar.exe",
+            "Dev Sidecar",
+            "--user-data-dir=\"$persist_dir\\UserData\""
+        ]
+    ],
+    "persist": "UserData",
+    "checkver": {
+        "url": "https://api.github.com/repositories/299584778/releases/latest",
+        "jsonpath": "$..browser_download_url",
+        "regex": "(?<file>DevSidecar-([\\d.]+)(-node\\d+)?\\.exe)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/docmirror/dev-sidecar/releases/download/v$version/$matchFile#/dl.7z"
+            }
+        }
+    }
+}
