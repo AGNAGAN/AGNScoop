@@ -27,8 +27,8 @@
     ]
   ],
   "checkver": {
-    "url": "https://freefilesync.org/news-feed.php",
-    "regex": "FreeFileSync ([\\d.]+) has been released!"
+    "url": "https://freefilesync.org/download.php",
+    "regex": "FreeFileSync\\s+([\\d.]+)\\s+Windows"
   },
   "autoupdate": {
     "url": "https://freefilesync.org/download/FreeFileSync_$version_Windows_Setup.exe"
