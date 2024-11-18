@@ -23,7 +23,6 @@
             "SteamCommunity 302"
         ]
     ],
-    "depends": "main/7z",
     "checkver": {
         "regex": "uploads/(?<date>[\\d/]+)/steamcommunity_302_V([\\d.]+)"
     },
