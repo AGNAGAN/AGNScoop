@@ -20,14 +20,13 @@
     ],
     "persist": "UserData",
     "checkver": {
-        "url": "https://api.github.com/repositories/299584778/releases/latest",
-        "jsonpath": "$..browser_download_url",
-        "regex": "(?<file>DevSidecar-([\\d.]+)(-node\\d+)?\\.exe)"
+        "url": "https://github.com/docmirror/dev-sidecar",
+        "regex": "/releases/tag/v?(?<version>.+)?\""
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/docmirror/dev-sidecar/releases/download/v$version/$matchFile#/dl.7z"
+                "url": "https://github.com/docmirror/dev-sidecar/releases/download/v$version/DevSidecar-$version.exe#/dl.7z"
             }
         }
     }
